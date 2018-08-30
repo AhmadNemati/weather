@@ -4,4 +4,7 @@
     <dimen name="n2">50dp</dimen>
     <dimen name="n3">235dp</dimen>
     <dimen name="n4">150dp</dimen>
+    <dimen name="weather_bottom_margin">20.0dip</dimen>
+    <dimen name="weather_info_space">10.0dip</dimen>
+    <dimen name="weather_start_end_margin">15.0dip</dimen>
 </resources>
