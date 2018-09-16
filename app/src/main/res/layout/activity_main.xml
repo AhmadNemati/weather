@@ -7,75 +7,74 @@
     tools:context=".MainActivity">
 
 
-    
     <LinearLayout
         android:id="@+id/top"
         android:layout_width="match_parent"
 
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-      <RelativeLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-          <pl.droidsonroids.gif.GifImageView
-              android:layout_width="match_parent"
-              android:background="@drawable/clear_gif"
-              android:layout_height="wrap_content" />
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/clear_gif" />
 
-          <TextView
-              android:id="@+id/current_temp"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignParentRight="true"
-              android:layout_marginEnd="28dp"
-              android:layout_marginStart="8dp"
-              android:layout_marginTop="7dp"
-              android:fontFamily="@font/iran_sans_bold"
-              android:shadowColor="@color/text_shadow_color"
-              android:shadowDy="2.0"
-              android:shadowRadius="5.0"
-              android:text="28°"
-              android:textColor="@color/text_color_white"
-              android:textSize="60.0sp"
+            <TextView
+                android:id="@+id/current_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="28dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/iran_sans_bold"
+                android:shadowColor="@color/text_shadow_color"
+                android:shadowDy="2.0"
+                android:shadowRadius="5.0"
+                android:text="28°"
+                android:textColor="@color/text_color_white"
+                android:textSize="60.0sp"
 
-              />
+                />
 
-          <TextView
-              android:id="@+id/city_position"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignParentRight="true"
-              android:layout_below="@id/current_temp"
-              android:layout_gravity="center"
-              android:layout_marginEnd="50dp"
-              android:layout_marginTop="-20dp"
-              android:fontFamily="@font/iran_sans_bold"
-              android:shadowColor="@color/text_shadow_color"
-              android:shadowDy="2.0"
-              android:shadowRadius="3.0"
-              android:text="تهران"
-              android:textColor="@color/text_color_white"
-              android:textSize="20sp" />
+            <TextView
+                android:id="@+id/city_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/current_temp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="50dp"
+                android:layout_marginTop="-20dp"
+                android:fontFamily="@font/iran_sans_bold"
+                android:shadowColor="@color/text_shadow_color"
+                android:shadowDy="2.0"
+                android:shadowRadius="3.0"
+                android:text="تهران"
+                android:textColor="@color/text_color_white"
+                android:textSize="20sp" />
 
-          <Button
-              android:id="@+id/search_city"
-              android:layout_width="27dp"
-              android:layout_height="27dp"
-              android:layout_alignParentLeft="true"
-              android:layout_marginLeft="25dp"
-              android:layout_marginTop="16dp"
-              android:background="@drawable/ic_city2"
-              android:backgroundTint="@color/whiteBackground"
-              android:scaleType="fitCenter" />
+            <Button
+                android:id="@+id/search_city"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/ic_city2"
+                android:backgroundTint="@color/whiteBackground"
+                android:scaleType="fitCenter" />
 
-      </RelativeLayout>
+        </RelativeLayout>
 
         <LinearLayout
+            style="@style/Direction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-style="@style/Direction"
             android:orientation="vertical">
 
             <TextView
@@ -97,17 +96,17 @@ style="@style/Direction"
                 android:layout_gravity="right"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="-5dp"
-                android:text="وضعیت آب و هوا"
                 android:fontFamily="@font/iran_sans_bold"
+                android:text="وضعیت آب و هوا"
                 android:textColor="@color/text_color_subtitle"
                 android:textSize="14sp" />
         </LinearLayout>
 
         <LinearLayout
+            style="@style/Direction"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            style="@style/Direction"
             android:orientation="horizontal"
             android:paddingBottom="12dp">
 
@@ -125,7 +124,7 @@ style="@style/Direction"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    android:src="@drawable/ic_temperature"
+                    app:srcCompat="@drawable/ic_temperature"
                     android:tint="@color/colorIcons" />
 
                 <LinearLayout
@@ -167,7 +166,7 @@ style="@style/Direction"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    android:src="@drawable/feels_like"
+                    app:srcCompat="@drawable/feels_like"
                     android:tint="@color/colorIcons" />
 
                 <LinearLayout
@@ -198,10 +197,10 @@ style="@style/Direction"
         </LinearLayout>
 
         <LinearLayout
+            style="@style/Direction"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            style="@style/Direction"
             android:paddingBottom="12dp"
             android:paddingTop="12dp">
 
@@ -218,7 +217,7 @@ style="@style/Direction"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    android:src="@drawable/ic_chance_rain"
+                    app:srcCompat="@drawable/ic_chance_rain"
                     android:tint="@color/colorIcons" />
 
                 <LinearLayout
@@ -260,7 +259,7 @@ style="@style/Direction"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    android:src="@drawable/ic_wind"
+                    app:srcCompat="@drawable/ic_wind"
                     android:tint="@color/colorIcons" />
 
                 <LinearLayout
@@ -291,11 +290,11 @@ style="@style/Direction"
         </LinearLayout>
 
         <LinearLayout
+            style="@style/Direction"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingBottom="12dp"
-            style="@style/Direction"
             android:paddingTop="12dp">
 
             <LinearLayout
@@ -311,7 +310,7 @@ style="@style/Direction"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    android:src="@drawable/ic_pressure"
+                    app:srcCompat="@drawable/ic_pressure"
                     android:tint="@color/colorIcons" />
 
                 <LinearLayout
@@ -354,7 +353,7 @@ style="@style/Direction"
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    android:src="@drawable/ic_humidity"
+                    app:srcCompat="@drawable/ic_humidity"
                     android:tint="@color/colorIcons" />
 
                 <LinearLayout
@@ -409,7 +408,7 @@ style="@style/Direction"
                         android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="3dp"
-                        android:src="@drawable/uv_index"
+                        app:srcCompat="@drawable/uv_index"
                         android:tint="@color/colorIcons" />
 
                     <LinearLayout
@@ -451,7 +450,7 @@ style="@style/Direction"
                         android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="3dp"
-                        android:src="@drawable/ic_cloud_cover"
+                        app:srcCompat="@drawable/ic_cloud_cover"
                         android:tint="@color/colorIcons" />
 
                     <LinearLayout
@@ -483,9 +482,9 @@ style="@style/Direction"
         </LinearLayout>
 
         <LinearLayout
+            style="@style/Direction"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Direction"
             android:orientation="vertical">
 
             <TextView
@@ -505,9 +504,9 @@ style="@style/Direction"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="-5dp"
+                android:fontFamily="@font/iran_sans_bold"
                 android:text="پیش بینی وضعیت آب و هوای ۷ روز آینده"
                 android:textColor="@color/text_color_subtitle"
-                android:fontFamily="@font/iran_sans_bold"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -554,7 +553,7 @@ style="@style/Direction"
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_humidity"
+                            app:srcCompat="@drawable/ic_humidity"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -563,8 +562,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp"
-                            android:text="۲۰%"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۲۰%"
                             android:textColor="#ff757575" />
 
                         <ImageView
@@ -572,7 +571,7 @@ style="@style/Direction"
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            android:src="@drawable/ic_temperature"
+                            app:srcCompat="@drawable/ic_temperature"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -580,8 +579,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:layout_marginRight="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="#ff757575" />
                     </LinearLayout>
                 </LinearLayout>
@@ -594,13 +593,13 @@ style="@style/Direction"
 
                     <ImageView
 
-                        app:srcCompat="@drawable/ic_cloud_moon"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="5dp"
                         android:padding="10dp"
                         android:paddingTop="20dp"
-                        android:scaleType="fitXY" />
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_cloud_moon" />
 
 
                 </LinearLayout>
@@ -638,8 +637,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="احتمال بارش"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -647,8 +646,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="فشار هوا"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -656,8 +655,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="شاخص UV"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="شاخص UV"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -666,9 +665,9 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="سرعت باد"
-
                             android:fontFamily="@font/iran_sans_bold"
+
+                            android:text="سرعت باد"
                             android:textColor="@color/color_weather_name_card" />
                     </LinearLayout>
 
@@ -683,8 +682,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۱۵%"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -692,8 +691,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۲۰ پاسکال"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -701,8 +700,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="4"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="4"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -711,8 +710,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="۵ کیلومتر بر ساعت"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۵ کیلومتر بر ساعت"
                             android:textColor="@color/color_weather_value_card" />
                     </LinearLayout>
                 </LinearLayout>
@@ -768,7 +767,7 @@ style="@style/Direction"
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_humidity"
+                            app:srcCompat="@drawable/ic_humidity"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -777,8 +776,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp"
-                            android:text="۲۰%"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۲۰%"
                             android:textColor="#ff757575" />
 
                         <ImageView
@@ -786,7 +785,7 @@ style="@style/Direction"
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            android:src="@drawable/ic_temperature"
+                            app:srcCompat="@drawable/ic_temperature"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -794,8 +793,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:layout_marginRight="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="#ff757575" />
                     </LinearLayout>
                 </LinearLayout>
@@ -808,13 +807,13 @@ style="@style/Direction"
 
                     <ImageView
 
-                        app:srcCompat="@drawable/ic_cloud_moon"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="5dp"
                         android:padding="10dp"
                         android:paddingTop="20dp"
-                        android:scaleType="fitXY" />
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_cloud_moon" />
 
 
                 </LinearLayout>
@@ -852,8 +851,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="احتمال بارش"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -861,8 +860,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="فشار هوا"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -870,8 +869,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="شاخص UV"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="شاخص UV"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -880,9 +879,9 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="سرعت باد"
-
                             android:fontFamily="@font/iran_sans_bold"
+
+                            android:text="سرعت باد"
                             android:textColor="@color/color_weather_name_card" />
                     </LinearLayout>
 
@@ -897,8 +896,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۱۵%"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -906,8 +905,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۲۰ پاسکال"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -915,8 +914,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="4"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="4"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -925,8 +924,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="۵ کیلومتر بر ساعت"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۵ کیلومتر بر ساعت"
                             android:textColor="@color/color_weather_value_card" />
                     </LinearLayout>
                 </LinearLayout>
@@ -938,6 +937,7 @@ style="@style/Direction"
                 android:layout_height="1dp"
                 android:background="@color/separator_color" />
         </LinearLayout>
+
         <LinearLayout
 
 
@@ -981,7 +981,7 @@ style="@style/Direction"
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_humidity"
+                            app:srcCompat="@drawable/ic_humidity"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -990,8 +990,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp"
-                            android:text="۲۰%"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۲۰%"
                             android:textColor="#ff757575" />
 
                         <ImageView
@@ -999,7 +999,7 @@ style="@style/Direction"
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            android:src="@drawable/ic_temperature"
+                            app:srcCompat="@drawable/ic_temperature"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -1007,8 +1007,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:layout_marginRight="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="#ff757575" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1021,13 +1021,13 @@ style="@style/Direction"
 
                     <ImageView
 
-                        app:srcCompat="@drawable/ic_cloud_moon"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="5dp"
                         android:padding="10dp"
                         android:paddingTop="20dp"
-                        android:scaleType="fitXY" />
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_cloud_moon" />
 
 
                 </LinearLayout>
@@ -1065,8 +1065,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="احتمال بارش"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1074,8 +1074,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="فشار هوا"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1083,8 +1083,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="شاخص UV"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="شاخص UV"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1093,9 +1093,9 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="سرعت باد"
-
                             android:fontFamily="@font/iran_sans_bold"
+
+                            android:text="سرعت باد"
                             android:textColor="@color/color_weather_name_card" />
                     </LinearLayout>
 
@@ -1110,8 +1110,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۱۵%"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1119,8 +1119,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۲۰ پاسکال"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1128,8 +1128,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="4"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="4"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1138,8 +1138,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="۵ کیلومتر بر ساعت"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۵ کیلومتر بر ساعت"
                             android:textColor="@color/color_weather_value_card" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1151,6 +1151,7 @@ style="@style/Direction"
                 android:layout_height="1dp"
                 android:background="@color/separator_color" />
         </LinearLayout>
+
         <LinearLayout
 
 
@@ -1194,7 +1195,7 @@ style="@style/Direction"
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_humidity"
+                            app:srcCompat="@drawable/ic_humidity"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -1203,8 +1204,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp"
-                            android:text="۲۰%"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۲۰%"
                             android:textColor="#ff757575" />
 
                         <ImageView
@@ -1212,7 +1213,7 @@ style="@style/Direction"
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            android:src="@drawable/ic_temperature"
+                            app:srcCompat="@drawable/ic_temperature"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -1220,8 +1221,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:layout_marginRight="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="#ff757575" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1234,13 +1235,13 @@ style="@style/Direction"
 
                     <ImageView
 
-                        app:srcCompat="@drawable/ic_cloud_moon"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="5dp"
                         android:padding="10dp"
                         android:paddingTop="20dp"
-                        android:scaleType="fitXY" />
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_cloud_moon" />
 
 
                 </LinearLayout>
@@ -1278,8 +1279,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="احتمال بارش"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1287,8 +1288,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="فشار هوا"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1296,8 +1297,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="شاخص UV"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="شاخص UV"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1306,9 +1307,9 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="سرعت باد"
-
                             android:fontFamily="@font/iran_sans_bold"
+
+                            android:text="سرعت باد"
                             android:textColor="@color/color_weather_name_card" />
                     </LinearLayout>
 
@@ -1323,8 +1324,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۱۵%"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1332,8 +1333,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۲۰ پاسکال"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1341,8 +1342,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="4"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="4"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1351,8 +1352,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="۵ کیلومتر بر ساعت"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۵ کیلومتر بر ساعت"
                             android:textColor="@color/color_weather_value_card" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1364,6 +1365,7 @@ style="@style/Direction"
                 android:layout_height="1dp"
                 android:background="@color/separator_color" />
         </LinearLayout>
+
         <LinearLayout
 
 
@@ -1407,7 +1409,7 @@ style="@style/Direction"
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_humidity"
+                            app:srcCompat="@drawable/ic_humidity"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -1416,8 +1418,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp"
-                            android:text="۲۰%"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۲۰%"
                             android:textColor="#ff757575" />
 
                         <ImageView
@@ -1425,7 +1427,7 @@ style="@style/Direction"
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            android:src="@drawable/ic_temperature"
+                            app:srcCompat="@drawable/ic_temperature"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -1433,8 +1435,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:layout_marginRight="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="#ff757575" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1447,13 +1449,13 @@ style="@style/Direction"
 
                     <ImageView
 
-                        app:srcCompat="@drawable/ic_cloud_moon"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="5dp"
                         android:padding="10dp"
                         android:paddingTop="20dp"
-                        android:scaleType="fitXY" />
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_cloud_moon" />
 
 
                 </LinearLayout>
@@ -1491,8 +1493,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="احتمال بارش"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1500,8 +1502,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="فشار هوا"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1509,8 +1511,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="شاخص UV"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="شاخص UV"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1519,9 +1521,9 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="سرعت باد"
-
                             android:fontFamily="@font/iran_sans_bold"
+
+                            android:text="سرعت باد"
                             android:textColor="@color/color_weather_name_card" />
                     </LinearLayout>
 
@@ -1536,8 +1538,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۱۵%"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1545,8 +1547,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۲۰ پاسکال"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1554,8 +1556,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="4"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="4"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1564,8 +1566,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="۵ کیلومتر بر ساعت"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۵ کیلومتر بر ساعت"
                             android:textColor="@color/color_weather_value_card" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1577,6 +1579,7 @@ style="@style/Direction"
                 android:layout_height="1dp"
                 android:background="@color/separator_color" />
         </LinearLayout>
+
         <LinearLayout
 
 
@@ -1620,7 +1623,7 @@ style="@style/Direction"
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_humidity"
+                            app:srcCompat="@drawable/ic_humidity"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -1629,8 +1632,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp"
-                            android:text="۲۰%"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۲۰%"
                             android:textColor="#ff757575" />
 
                         <ImageView
@@ -1638,7 +1641,7 @@ style="@style/Direction"
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            android:src="@drawable/ic_temperature"
+                            app:srcCompat="@drawable/ic_temperature"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -1646,8 +1649,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:layout_marginRight="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="#ff757575" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1660,13 +1663,13 @@ style="@style/Direction"
 
                     <ImageView
 
-                        app:srcCompat="@drawable/ic_cloud_moon"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="5dp"
                         android:padding="10dp"
                         android:paddingTop="20dp"
-                        android:scaleType="fitXY" />
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_cloud_moon" />
 
 
                 </LinearLayout>
@@ -1704,8 +1707,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="احتمال بارش"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1713,8 +1716,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="فشار هوا"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1722,8 +1725,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="شاخص UV"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="شاخص UV"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1732,9 +1735,9 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="سرعت باد"
-
                             android:fontFamily="@font/iran_sans_bold"
+
+                            android:text="سرعت باد"
                             android:textColor="@color/color_weather_name_card" />
                     </LinearLayout>
 
@@ -1749,8 +1752,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۱۵%"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1758,8 +1761,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۲۰ پاسکال"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1767,8 +1770,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="4"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="4"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1777,8 +1780,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="۵ کیلومتر بر ساعت"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۵ کیلومتر بر ساعت"
                             android:textColor="@color/color_weather_value_card" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1790,6 +1793,7 @@ style="@style/Direction"
                 android:layout_height="1dp"
                 android:background="@color/separator_color" />
         </LinearLayout>
+
         <LinearLayout
 
 
@@ -1833,7 +1837,7 @@ style="@style/Direction"
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            android:src="@drawable/ic_humidity"
+                            app:srcCompat="@drawable/ic_humidity"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -1842,8 +1846,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_marginRight="5dp"
-                            android:text="۲۰%"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۲۰%"
                             android:textColor="#ff757575" />
 
                         <ImageView
@@ -1851,7 +1855,7 @@ style="@style/Direction"
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            android:src="@drawable/ic_temperature"
+                            app:srcCompat="@drawable/ic_temperature"
                             android:tint="#ff757575" />
 
                         <TextView
@@ -1859,8 +1863,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:layout_marginRight="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="#ff757575" />
                     </LinearLayout>
                 </LinearLayout>
@@ -1873,13 +1877,13 @@ style="@style/Direction"
 
                     <ImageView
 
-                        app:srcCompat="@drawable/ic_cloud_moon"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
                         android:layout_marginEnd="5dp"
                         android:padding="10dp"
                         android:paddingTop="20dp"
-                        android:scaleType="fitXY" />
+                        android:scaleType="fitXY"
+                        app:srcCompat="@drawable/ic_cloud_moon" />
 
 
                 </LinearLayout>
@@ -1917,8 +1921,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="احتمال بارش"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1926,8 +1930,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="فشار هوا"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1935,8 +1939,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="شاخص UV"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="شاخص UV"
                             android:textColor="@color/color_weather_name_card" />
 
                         <TextView
@@ -1945,9 +1949,9 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="سرعت باد"
-
                             android:fontFamily="@font/iran_sans_bold"
+
+                            android:text="سرعت باد"
                             android:textColor="@color/color_weather_name_card" />
                     </LinearLayout>
 
@@ -1962,8 +1966,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۱۵%"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1971,8 +1975,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:fontFamily="@font/iran_sans_bold"
                             android:text="۲۰ پاسکال"
-                            android:fontFamily="@font/iran_sans_bold"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1980,8 +1984,8 @@ style="@style/Direction"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:text="4"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="4"
                             android:textColor="@color/color_weather_value_card" />
 
                         <TextView
@@ -1990,8 +1994,8 @@ style="@style/Direction"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:layout_marginTop="5dp"
-                            android:text="۵ کیلومتر بر ساعت"
                             android:fontFamily="@font/iran_sans_bold"
+                            android:text="۵ کیلومتر بر ساعت"
                             android:textColor="@color/color_weather_value_card" />
                     </LinearLayout>
                 </LinearLayout>
@@ -2003,9 +2007,6 @@ style="@style/Direction"
                 android:layout_height="1dp"
                 android:background="@color/separator_color" />
         </LinearLayout>
-
-
-
 
 
     </LinearLayout>
