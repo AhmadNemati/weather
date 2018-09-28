@@ -35,7 +35,7 @@
                 android:shadowColor="@color/text_shadow_color"
                 android:shadowDy="2.0"
                 android:shadowRadius="5.0"
-                android:text="28°"
+
                 android:textColor="@color/text_color_white"
                 android:textSize="60.0sp"
 
@@ -124,8 +124,8 @@
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    app:srcCompat="@drawable/ic_temperature"
-                    android:tint="@color/colorIcons" />
+                    android:tint="@color/colorIcons"
+                    app:srcCompat="@drawable/ic_temperature" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -143,12 +143,12 @@
                         android:theme="@style/TodayInfoTitle" />
 
                     <TextView
-
+                        android:id="@+id/min_max_temp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:gravity="right"
-                        android:text="۳۵° | ۲۳°"
+
                         android:theme="@style/TodayInfoValueTheme" />
                 </LinearLayout>
             </LinearLayout>
@@ -166,8 +166,8 @@
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    app:srcCompat="@drawable/feels_like"
-                    android:tint="@color/colorIcons" />
+                    android:tint="@color/colorIcons"
+                    app:srcCompat="@drawable/feels_like" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -190,7 +190,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:gravity="right"
-                        android:text="۳۵°"
+
                         android:theme="@style/TodayInfoValueTheme" />
                 </LinearLayout>
             </LinearLayout>
@@ -217,8 +217,8 @@
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    app:srcCompat="@drawable/ic_chance_rain"
-                    android:tint="@color/colorIcons" />
+                    android:tint="@color/colorIcons"
+                    app:srcCompat="@drawable/ic_chance_rain" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -241,7 +241,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:gravity="right"
-                        android:text="۲۵٪"
                         android:theme="@style/TodayInfoValueTheme" />
                 </LinearLayout>
             </LinearLayout>
@@ -259,8 +258,8 @@
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    app:srcCompat="@drawable/ic_wind"
-                    android:tint="@color/colorIcons" />
+                    android:tint="@color/colorIcons"
+                    app:srcCompat="@drawable/ic_wind" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -283,7 +282,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:gravity="right"
-                        android:text="km/h 75"
                         android:theme="@style/TodayInfoValueTheme" />
                 </LinearLayout>
             </LinearLayout>
@@ -310,8 +308,8 @@
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    app:srcCompat="@drawable/ic_pressure"
-                    android:tint="@color/colorIcons" />
+                    android:tint="@color/colorIcons"
+                    app:srcCompat="@drawable/ic_pressure" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -335,7 +333,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:gravity="right"
-                        android:text="۲۳ پاسکال"
                         android:theme="@style/TodayInfoValueTheme" />
                 </LinearLayout>
             </LinearLayout>
@@ -353,8 +350,8 @@
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="3dp"
-                    app:srcCompat="@drawable/ic_humidity"
-                    android:tint="@color/colorIcons" />
+                    android:tint="@color/colorIcons"
+                    app:srcCompat="@drawable/ic_humidity" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -373,11 +370,11 @@
 
                     <TextView
 
+                        android:id="@+id/humidity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:gravity="right"
-                        android:text="۱۵٪"
                         android:theme="@style/TodayInfoValueTheme" />
                 </LinearLayout>
             </LinearLayout>
@@ -408,8 +405,8 @@
                         android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="3dp"
-                        app:srcCompat="@drawable/uv_index"
-                        android:tint="@color/colorIcons" />
+                        android:tint="@color/colorIcons"
+                        app:srcCompat="@drawable/uv_index" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -432,7 +429,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
                             android:gravity="right"
-                            android:text="۳"
                             android:theme="@style/TodayInfoValueTheme" />
                     </LinearLayout>
                 </LinearLayout>
@@ -450,8 +446,8 @@
                         android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="3dp"
-                        app:srcCompat="@drawable/ic_cloud_cover"
-                        android:tint="@color/colorIcons" />
+                        android:tint="@color/colorIcons"
+                        app:srcCompat="@drawable/ic_cloud_cover" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -474,7 +470,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="right"
                             android:gravity="right"
-                            android:text="۱۵٪"
                             android:theme="@style/TodayInfoValueTheme" />
                     </LinearLayout>
                 </LinearLayout>
@@ -553,8 +548,8 @@
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_humidity"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_humidity" />
 
                         <TextView
 
@@ -571,8 +566,8 @@
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            app:srcCompat="@drawable/ic_temperature"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_temperature" />
 
                         <TextView
 
@@ -767,8 +762,8 @@
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_humidity"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_humidity" />
 
                         <TextView
 
@@ -785,8 +780,8 @@
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            app:srcCompat="@drawable/ic_temperature"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_temperature" />
 
                         <TextView
 
@@ -981,8 +976,8 @@
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_humidity"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_humidity" />
 
                         <TextView
 
@@ -999,8 +994,8 @@
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            app:srcCompat="@drawable/ic_temperature"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_temperature" />
 
                         <TextView
 
@@ -1195,8 +1190,8 @@
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_humidity"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_humidity" />
 
                         <TextView
 
@@ -1213,8 +1208,8 @@
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            app:srcCompat="@drawable/ic_temperature"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_temperature" />
 
                         <TextView
 
@@ -1409,8 +1404,8 @@
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_humidity"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_humidity" />
 
                         <TextView
 
@@ -1427,8 +1422,8 @@
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            app:srcCompat="@drawable/ic_temperature"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_temperature" />
 
                         <TextView
 
@@ -1623,8 +1618,8 @@
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_humidity"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_humidity" />
 
                         <TextView
 
@@ -1641,8 +1636,8 @@
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            app:srcCompat="@drawable/ic_temperature"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_temperature" />
 
                         <TextView
 
@@ -1837,8 +1832,8 @@
 
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
-                            app:srcCompat="@drawable/ic_humidity"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_humidity" />
 
                         <TextView
 
@@ -1855,8 +1850,8 @@
                             android:layout_width="15dp"
                             android:layout_height="match_parent"
                             android:layout_marginRight="15dp"
-                            app:srcCompat="@drawable/ic_temperature"
-                            android:tint="#ff757575" />
+                            android:tint="#ff757575"
+                            app:srcCompat="@drawable/ic_temperature" />
 
                         <TextView
 

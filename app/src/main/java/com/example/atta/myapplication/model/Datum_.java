@@ -62,10 +62,10 @@ public class Datum_ {
     private Double dewPoint;
     @SerializedName("humidity")
     @Expose
-    private Double humidity;
+    private double humidity;
     @SerializedName("pressure")
     @Expose
-    private Double pressure;
+    private double pressure;
     @SerializedName("windSpeed")
     @Expose
     private Double windSpeed;
@@ -80,10 +80,10 @@ public class Datum_ {
     private Double windBearing;
     @SerializedName("cloudCover")
     @Expose
-    private Double cloudCover;
+    private double cloudCover;
     @SerializedName("uvIndex")
     @Expose
-    private Double uvIndex;
+    private double uvIndex;
     @SerializedName("uvIndexTime")
     @Expose
     private Double uvIndexTime;
@@ -172,8 +172,8 @@ public class Datum_ {
         this.moonPhase = moonPhase;
     }
 
-    public Double getPrecipIntensity() {
-        return precipIntensity;
+    public String getPrecipIntensity() {
+        return String.valueOf(precipIntensity *100);
     }
 
     public void setPrecipIntensity(Double precipIntensity) {
@@ -196,8 +196,8 @@ public class Datum_ {
         this.precipProbability = precipProbability;
     }
 
-    public Double getTemperatureHigh() {
-        return temperatureHigh;
+    public String getTemperatureHigh() {
+        return convertf2c(temperatureHigh);
     }
 
     public void setTemperatureHigh(Double temperatureHigh) {
@@ -268,24 +268,26 @@ public class Datum_ {
         this.dewPoint = dewPoint;
     }
 
-    public Double getHumidity() {
-        return humidity;
+    public String getHumidity() {
+        int temp= (int) (humidity *100);
+        return String.valueOf(temp);
     }
 
     public void setHumidity(Double humidity) {
         this.humidity = humidity;
     }
 
-    public Double getPressure() {
-        return pressure;
+    public String getPressure() {
+        int temp= (int) pressure;
+        return String.valueOf((temp));
     }
 
     public void setPressure(Double pressure) {
         this.pressure = pressure;
     }
 
-    public Double getWindSpeed() {
-        return windSpeed;
+    public String getWindSpeed() {
+        return String.valueOf(windSpeed);
     }
 
     public void setWindSpeed(Double windSpeed) {
@@ -316,16 +318,18 @@ public class Datum_ {
         this.windBearing = windBearing;
     }
 
-    public Double getCloudCover() {
-        return cloudCover;
+    public String getCloudCover() {
+        int var= (int) (cloudCover *100);
+        return String.valueOf(var);
     }
 
     public void setCloudCover(Double cloudCover) {
         this.cloudCover = cloudCover;
     }
 
-    public Double getUvIndex() {
-        return uvIndex;
+    public String getUvIndex() {
+
+        return String.valueOf((int)uvIndex);
     }
 
     public void setUvIndex(Double uvIndex) {
@@ -356,8 +360,8 @@ public class Datum_ {
         this.ozone = ozone;
     }
 
-    public Double getTemperatureMin() {
-        return temperatureMin;
+    public String getTemperatureMin() {
+        return convertf2c(temperatureMin);
     }
 
     public void setTemperatureMin(Double temperatureMin) {
@@ -434,6 +438,11 @@ public class Datum_ {
 
     public void setPrecipType(String precipType) {
         this.precipType = precipType;
+    }
+
+    private String convertf2c(double f)
+    {
+        return String.valueOf((int) ((f-32)*100/180));
     }
 
 }
