@@ -8,7 +8,7 @@ public class Datum_ {
 
     @SerializedName("time")
     @Expose
-    private Double time;
+    private long time;
     @SerializedName("summary")
     @Expose
     private String summary;
@@ -124,11 +124,11 @@ public class Datum_ {
     @Expose
     private String precipType;
 
-    public Double getTime() {
-        return time;
+    public String getTime() {
+        return String.valueOf(time)+"000";
     }
 
-    public void setTime(Double time) {
+    public void setTime(long time) {
         this.time = time;
     }
 
