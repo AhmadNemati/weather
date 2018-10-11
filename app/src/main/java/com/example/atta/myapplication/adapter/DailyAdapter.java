@@ -3,13 +3,11 @@ package com.example.atta.myapplication.adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.atta.myapplication.R;
 import com.example.atta.myapplication.calendar.PersianCalendar;
 import com.example.atta.myapplication.model.Datum_;
@@ -58,11 +56,8 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder> 
         viewHolder.rain.setText(model.get(i).getPrecipIntensity() + "%");
         viewHolder.pressure.setText("hPa " + model.get(i).getPressure());
         viewHolder.uvIndex.setText(model.get(i).getUvIndex());
-        PersianCalendar persianCalendar=new PersianCalendar(Long.parseLong(model.get(i).getTime()));
-        Log.e("Tag",model.get(i).getTime());
+        PersianCalendar persianCalendar = new PersianCalendar(Long.parseLong(model.get(i).getTime()));
         viewHolder.date.setText(persianCalendar.getPersianWeekDayName());
-       
-
 
 
     }

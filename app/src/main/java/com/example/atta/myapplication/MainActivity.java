@@ -60,13 +60,11 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
 
         Service.getInstance()
                 .getService()
-                .getWeather(35.712049,51.407204)
+                .getWeather(35.712049, 51.407204)
                 .enqueue(this);
 
 
     }
-
-
 
 
     @Override
@@ -116,7 +114,6 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
         LocationListener locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
 
-               
 
             }
 
