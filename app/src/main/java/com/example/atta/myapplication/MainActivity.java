@@ -66,10 +66,7 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
 
     }
 
-    private void getData(double lat,double lng)
-    {
 
-    }
 
 
     @Override
@@ -119,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
         LocationListener locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
 
-                getData(location.getLatitude(),location.getLongitude());
+               
 
             }
 
@@ -133,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
             }
         };
 
-// Register the listener with the Location Manager to receive location updates
+
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
     }
 
