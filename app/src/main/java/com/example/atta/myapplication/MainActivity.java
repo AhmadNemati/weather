@@ -110,10 +110,13 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
     public void onPermissionGranted() {
 
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            Log.e("Location", "Not Enable");
+        }
 
         LocationListener locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
-
+                Log.e("Location", "Enable");
 
             }
 
