@@ -7,7 +7,7 @@ import com.example.atta.myapplication.R;
  */
 public class ParseIcon {
 
-    private static int getMaterialIcon(String icon) {
+    public static int getMaterialIcon(String icon) {
         int type;
 
 
