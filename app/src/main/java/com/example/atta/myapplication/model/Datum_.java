@@ -140,8 +140,8 @@ public class Datum_ {
         this.summary = summary;
     }
 
-    public String getIcon() {
-        return icon;
+    public int getIcon() {
+        return ParseIcon.getMaterialIcon(icon);
     }
 
     public void setIcon(String icon) {

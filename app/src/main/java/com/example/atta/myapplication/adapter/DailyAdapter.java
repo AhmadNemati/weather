@@ -6,8 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.atta.myapplication.R;
 import com.example.atta.myapplication.calendar.PersianCalendar;
 import com.example.atta.myapplication.model.Datum_;
@@ -58,6 +60,7 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder> 
         viewHolder.uvIndex.setText(model.get(i).getUvIndex());
         PersianCalendar persianCalendar = new PersianCalendar(Long.parseLong(model.get(i).getTime()));
         viewHolder.date.setText(persianCalendar.getPersianWeekDayName());
+        Glide.with(viewHolder.icon.getContext()).load(model.get(i).getIcon()).into(viewHolder.icon);
 
 
     }
@@ -75,6 +78,7 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder> 
         TextView uvIndex;
         TextView windSpeed;
         TextView humidity;
+        ImageView icon;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -85,6 +89,7 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder> 
             uvIndex = itemView.findViewById(R.id.uv_index);
             windSpeed = itemView.findViewById(R.id.wind_speed);
             humidity = itemView.findViewById(R.id.humidity);
+            icon=itemView.findViewById(R.id.icon);
         }
     }
 

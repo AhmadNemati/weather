@@ -3,6 +3,9 @@ package com.example.atta.myapplication;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -11,21 +14,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.atta.myapplication.adapter.DailyAdapter;
 import com.example.atta.myapplication.model.WeatherModel;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements Callback<WeatherModel>, PermissionListener {
+public class MainActivity extends AppCompatActivity implements Callback<WeatherModel>, PermissionListener,View.OnClickListener {
     private TextView curentTemp;
     private TextView maxTemp;
     private TextView minMaxTemp;
@@ -35,7 +46,11 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
     private TextView humidity;
     private TextView uvIndex;
     private TextView cloudCover;
+    private TextView cityPosition;
     private RecyclerView recyclerView;
+    private Button searchCity;
+    LocationManager locationManager;
+    int PLACE_PICKER_REQUEST = 1;
 
 
     @Override
@@ -52,17 +67,38 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
         uvIndex = findViewById(R.id.uv_index);
         cloudCover = findViewById(R.id.cloud_cover);
         recyclerView = findViewById(R.id.list);
+        cityPosition=findViewById(R.id.city_position);
+        searchCity=findViewById(R.id.search_city);
+        searchCity.setOnClickListener(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         TedPermission.with(this)
                 .setPermissionListener(this)
                 .setPermissions(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
                 .check();
 
+
+
+
+
+    }
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == PLACE_PICKER_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                Place place = PlacePicker.getPlace(data, this);
+                updateData(place.getLatLng().latitude,place.getLatLng().longitude);
+               // cityPosition.setText(place.getName());
+            }
+        }
+    }
+
+
+    private void updateData(double lat,double lng)
+    {
+        cityPosition.setText(cityNameByLatLong(lat,lng));
         Service.getInstance()
                 .getService()
-                .getWeather(35.712049, 51.407204)
+                .getWeather(lat, lng)
                 .enqueue(this);
-
 
     }
 
@@ -104,19 +140,31 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
 
     }
 
+    private String cityNameByLatLong(double lat,double lng)
+    {
+        Geocoder geocoder = new Geocoder(this, new Locale("fa_IR"));
+        List<Address> addresses = null;
+        try {
+            addresses = geocoder.getFromLocation(lat, lng, 1);
+            return addresses.get(0).getLocality();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+
+    }
+
 
     @SuppressLint("MissingPermission")
     @Override
     public void onPermissionGranted() {
 
-        LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-            Log.e("Location", "Not Enable");
-        }
-
+         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         LocationListener locationListener = new LocationListener() {
             public void onLocationChanged(Location location) {
-                Log.e("Location", "Enable");
+
+                updateData(location.getLatitude(),location.getLongitude());
+                locationManager.removeUpdates(this);
 
             }
 
@@ -130,12 +178,34 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
             }
         };
 
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            Log.e("Location", "Not Enable");
+            updateData(35.712049,51.407204);
+
+        }
+
+
 
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
     }
 
     @Override
     public void onPermissionDenied(List<String> deniedPermissions) {
-        Toast.makeText(this, "لطفا برای استفاده از موقعیت خودکار دسترسی لازم را بدهید", Toast.LENGTH_SHORT).show();
+        Log.e("Tag","onPermissionDenied");
+       updateData(35.712049,51.407204);
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
+
+        try {
+            startActivityForResult(builder.build(MainActivity.this), PLACE_PICKER_REQUEST);
+        } catch (GooglePlayServicesRepairableException e) {
+            e.printStackTrace();
+        } catch (GooglePlayServicesNotAvailableException e) {
+            e.printStackTrace();
+        }
     }
 }
