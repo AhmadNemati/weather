@@ -134,7 +134,7 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder>
             arrow=itemView.findViewById(R.id.arrow);
             container=itemView.findViewById(R.id.container);
             expandableLayout=itemView.findViewById(R.id.expandableLayout);
-            expandableLayout.
+        
 
         }
     }
