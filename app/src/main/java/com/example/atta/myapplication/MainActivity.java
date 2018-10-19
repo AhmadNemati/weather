@@ -76,6 +76,9 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
                 .setPermissions(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION)
                 .check();
 
+        updateData(35.712049,51.407204);
+
+
 
 
 

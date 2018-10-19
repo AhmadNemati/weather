@@ -6,20 +6,26 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.bumptech.glide.Glide;
 import com.example.atta.myapplication.R;
 import com.example.atta.myapplication.calendar.PersianCalendar;
 import com.example.atta.myapplication.model.Datum_;
+import com.github.aakira.expandablelayout.ExpandableLayout;
 
 import java.util.List;
 
 /**
  * Created by Ahmad Nemati on 10/5/18.
  */
-public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder> {
+public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder>
+{
+
     private List<Datum_> model;
 
     public DailyAdapter(List<Datum_> model) {
@@ -41,7 +47,7 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(@NonNull final ViewHolder viewHolder, int i) {
         String maxTemp = model.get(i).getTemperatureHigh();
         String minTemp = model.get(i).getTemperatureMin();
         StringBuilder stringBuilder = new StringBuilder();
@@ -61,6 +67,35 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder> 
         PersianCalendar persianCalendar = new PersianCalendar(Long.parseLong(model.get(i).getTime()));
         viewHolder.date.setText(persianCalendar.getPersianWeekDayName());
         Glide.with(viewHolder.icon.getContext()).load(model.get(i).getIcon()).into(viewHolder.icon);
+        viewHolder.container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (viewHolder.expandableLayout.isExpanded())
+                {
+                    viewHolder.arrow.setMaxFrame(15);
+                    viewHolder.arrow.setMinFrame(8);
+                    viewHolder.arrow.playAnimation();
+
+                    viewHolder.expandableLayout.setExpanded(false);
+
+                }
+
+                else
+                {
+                    viewHolder.arrow.setFrame(0);
+                    viewHolder.arrow.setMaxFrame(8);
+                    viewHolder.arrow.setMinFrame(0);
+
+                    viewHolder.arrow.playAnimation();
+                    viewHolder.expandableLayout.setExpanded(true);
+                }
+
+
+
+            }
+        });
+
+
 
 
     }
@@ -69,6 +104,8 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder> 
     public int getItemCount() {
         return model.size();
     }
+
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView date;
@@ -79,6 +116,10 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder> 
         TextView windSpeed;
         TextView humidity;
         ImageView icon;
+        LottieAnimationView arrow;
+        View container;
+
+        ExpandableLayout expandableLayout;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -90,6 +131,11 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder> 
             windSpeed = itemView.findViewById(R.id.wind_speed);
             humidity = itemView.findViewById(R.id.humidity);
             icon=itemView.findViewById(R.id.icon);
+            arrow=itemView.findViewById(R.id.arrow);
+            container=itemView.findViewById(R.id.container);
+            expandableLayout=itemView.findViewById(R.id.expandableLayout);
+            expandableLayout.
+
         }
     }
 
