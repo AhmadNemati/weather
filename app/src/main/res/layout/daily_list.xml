@@ -106,25 +106,25 @@
                     android:id="@+id/arrow"
                     android:layout_width="15dp"
                     android:layout_height="15dp"
-android:layout_gravity="center"
+                    android:layout_gravity="center"
                     app:lottie_autoPlay="false"
-app:lottie_fileName="arrow_anim_grey.json"
+                    app:lottie_fileName="arrow_anim_grey.json"
 
-                    app:lottie_loop="false"
-                   />
+                    app:lottie_loop="false" />
 
 
             </LinearLayout>
         </FrameLayout>
 
-        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
-            android:id="@+id/expandableLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:ael_duration="1500"
-            app:ael_expanded="false"
-            app:ael_interpolator="bounce"
-            app:ael_orientation="vertical">
+
+
+            <net.cachapa.expandablelayout.ExpandableLayout
+                android:id="@+id/expandableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:el_duration="1000"
+                app:el_expanded="false"
+                app:el_parallax="0.5">
 
 
             <LinearLayout
@@ -239,7 +239,7 @@ app:lottie_fileName="arrow_anim_grey.json"
                 </LinearLayout>
             </LinearLayout>
 
-        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+            </net.cachapa.expandablelayout.ExpandableLayout>
 
         <View
 

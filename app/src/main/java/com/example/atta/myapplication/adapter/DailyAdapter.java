@@ -6,8 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,15 +14,15 @@ import com.bumptech.glide.Glide;
 import com.example.atta.myapplication.R;
 import com.example.atta.myapplication.calendar.PersianCalendar;
 import com.example.atta.myapplication.model.Datum_;
-import com.github.aakira.expandablelayout.ExpandableLayout;
+
+import net.cachapa.expandablelayout.ExpandableLayout;
 
 import java.util.List;
 
 /**
  * Created by Ahmad Nemati on 10/5/18.
  */
-public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder>
-{
+public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder> {
 
     private List<Datum_> model;
 
@@ -70,18 +68,14 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder>
         viewHolder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (viewHolder.expandableLayout.isExpanded())
-                {
+                if (viewHolder.expandableLayout.isExpanded()) {
                     viewHolder.arrow.setMaxFrame(15);
                     viewHolder.arrow.setMinFrame(8);
                     viewHolder.arrow.playAnimation();
 
                     viewHolder.expandableLayout.setExpanded(false);
 
-                }
-
-                else
-                {
+                } else {
                     viewHolder.arrow.setFrame(0);
                     viewHolder.arrow.setMaxFrame(8);
                     viewHolder.arrow.setMinFrame(0);
@@ -91,11 +85,8 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder>
                 }
 
 
-
             }
         });
-
-
 
 
     }
@@ -104,7 +95,6 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder>
     public int getItemCount() {
         return model.size();
     }
-
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -130,11 +120,11 @@ public class DailyAdapter extends RecyclerView.Adapter<DailyAdapter.ViewHolder>
             uvIndex = itemView.findViewById(R.id.uv_index);
             windSpeed = itemView.findViewById(R.id.wind_speed);
             humidity = itemView.findViewById(R.id.humidity);
-            icon=itemView.findViewById(R.id.icon);
-            arrow=itemView.findViewById(R.id.arrow);
-            container=itemView.findViewById(R.id.container);
-            expandableLayout=itemView.findViewById(R.id.expandableLayout);
-        
+            icon = itemView.findViewById(R.id.icon);
+            arrow = itemView.findViewById(R.id.arrow);
+            container = itemView.findViewById(R.id.container);
+            expandableLayout = itemView.findViewById(R.id.expandableLayout);
+
 
         }
     }
