@@ -10,6 +10,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -36,7 +37,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements Callback<WeatherModel>, PermissionListener,View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements Callback<WeatherModel>, PermissionListener,View.OnClickListener,SwipeRefreshLayout.OnRefreshListener {
     private TextView curentTemp;
     private TextView maxTemp;
     private TextView minMaxTemp;
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
     private Button searchCity;
     LocationManager locationManager;
     int PLACE_PICKER_REQUEST = 1;
+    private SwipeRefreshLayout swipeContainer;
+
 
 
     @Override
@@ -69,6 +72,15 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
         recyclerView = findViewById(R.id.list);
         cityPosition=findViewById(R.id.city_position);
         searchCity=findViewById(R.id.search_city);
+        swipeContainer =  findViewById(R.id.swipeContainer);
+        swipeContainer.setOnRefreshListener(this);
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+        swipeContainer.setRefreshing(true);
+
+
         searchCity.setOnClickListener(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         TedPermission.with(this)
@@ -110,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
     public void onResponse(Call<WeatherModel> call, Response<WeatherModel> response) {
 
         WeatherModel model = response.body();
+        swipeContainer.setRefreshing(false);
 
         curentTemp.setText(model.getCurrently().getTemperature() + "°");
 
@@ -210,5 +223,10 @@ public class MainActivity extends AppCompatActivity implements Callback<WeatherM
         } catch (GooglePlayServicesNotAvailableException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onRefresh() {
+        updateData(35.712049,51.407204);
     }
 }
